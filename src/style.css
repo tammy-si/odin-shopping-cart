@@ -84,3 +84,10 @@ ul {
     flex: 0 0 auto;
     margin: 40px;
 }
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
