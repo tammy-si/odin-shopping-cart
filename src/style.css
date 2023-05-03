@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #dbeafe;
+    background-color: #eff6ff;
     height: 100vh;
 }
 
@@ -34,6 +34,7 @@ ul {
     display: flex;
     list-style: none;
     gap: 30px;
+    align-items: center;
 }
 
 .items {
@@ -90,4 +91,17 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.cart-icon {
+    height: 30px;
+    width: 30px;
+    background-color: #bfdbfe;
+    padding: 10px;
+    padding-right: 13px;
+    border-radius: 50%;
+}
+
+.cart-icon:hover{
+    background-color: white;
 }

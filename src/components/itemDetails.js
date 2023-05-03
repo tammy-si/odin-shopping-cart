@@ -3,14 +3,14 @@ import { useParams } from 'react-router-dom';
 import { Bars } from 'react-loading-icons'
 
 
-function ItemDetails() {
+function ItemDetails({ addItemToCart }) {
   const [item, setItem] = useState({})
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
     fetchItem();
-    setTimeout(() => setLoading(false), 350);
+    setTimeout(() => setLoading(false), 400);
   }, []);
 
       // fetch certain item from fake store api
@@ -30,7 +30,7 @@ function ItemDetails() {
           <h1>{ item.title }</h1>
           <p>${ item.price }</p>
           <p>{ item.description}</p>
-          <button>Add to cart</button>
+          <button onClick={()=> addItemToCart(item) }>Add to cart</button>
         </div>
       </div>
     );  
