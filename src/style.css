@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    background-color: #dbeafe;
+    height: 100vh;
+}
+
+#root, .App {
+    height: 100%;
+}
+
+nav {
+    background-color: #1e3a8a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > * {
+    color: #bfdbfe;
+    text-decoration: none;
+    margin: 0 50px;
+}
+
+a, li{
+    color: #bfdbfe;
+    text-decoration: none;
+}
+
+li:hover {
+    color: white;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
+    border:1px solid black;
+    padding: 10px;
+    color: #1e3a8a;
+}
+
+.item:hover {
+    box-shadow: 5px 10px #888888;
+    cursor: pointer;
+}
+
+.item img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+/* for the item details */
+.item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 92%;
+}
+
+.info {
+    flex: 1;
+    padding: 80px;
+}
+
+.item-details img {
+    max-width: 80%;
+    max-height: 80%;
+    flex: 0 0 auto;
+    margin: 40px;
+}
