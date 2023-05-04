@@ -26,6 +26,25 @@ function App() {
     }
   }
 
+  const increaseQuantity = (item) => {
+    let updatedItem = cartItems.find(i => i === item)
+    updatedItem.quantity += 1;
+    // now set state
+    setCartItems([...cartItems.map(it => {return (it !== item) ? it : updatedItem})])
+  }
+
+  const decreaseQuantity = (item) => {
+    let updatedItem = cartItems.find(i => i === item)
+    updatedItem.quantity -= 1;
+    // if the item's quantity is zero, just remove it from the cartItems list, eelse update it as normal
+    if (updatedItem.quantity <= 0) {
+      // note yes it is item.item which is kind of confusing. But that's because the item is an object with keys of item and quantity. the item key holds the item info
+      setCartItems([...cartItems.filter(it => it.item.id !== item.item.id)])
+    } else {
+      setCartItems([...cartItems.map(it => {return (it.item.id !== item.item.id) ? it : updatedItem})])
+    }
+  }
+
   return (
     <Router>
       <div className="App">
@@ -35,7 +54,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/shop' element={<Shopping />} />
           <Route path="/shop/:id" element={<ItemDetails addItemToCart={addItemToCart}/>} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart cartItems={cartItems} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>} />
         </Routes>
       </div>
     </Router>
