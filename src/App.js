@@ -10,7 +10,7 @@ import Cart from './components/cart';
 
 function App() {
   const [cartItems, setCartItems] = useState([])
-  
+
   const addItemToCart = (item) => {
     // check if the item is already in the cart
     // if so just increase quantity, else add it with a quanitiy of 1
@@ -26,6 +26,7 @@ function App() {
     }
   }
 
+  // increase the amount of a single item user wants to buy
   const increaseQuantity = (item) => {
     let updatedItem = cartItems.find(i => i === item)
     updatedItem.quantity += 1;
@@ -33,6 +34,7 @@ function App() {
     setCartItems([...cartItems.map(it => {return (it !== item) ? it : updatedItem})])
   }
 
+  // decrease the amount of a single item user wants to buy
   const decreaseQuantity = (item) => {
     let updatedItem = cartItems.find(i => i === item)
     updatedItem.quantity -= 1;
