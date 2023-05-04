@@ -1,3 +1,6 @@
+# About
+This is a fake online store with a shopping cart feature. This was to practice React for the Odin Project. You can't actually buy stuff.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
