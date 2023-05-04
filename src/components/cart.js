@@ -25,23 +25,26 @@ function Cart({cartItems, increaseQuantity, decreaseQuantity}) {
   return (
   <div className="shopping">
   <h1>Cart</h1>
-  <div className='items'>
+  <div className='cart-items'>
       {cartItems.map(i => {
           return (
           <div className='cart-item' key={i.item.id}>
               <img src={i.item.image} alt={i.item.title}></img>
-              <p>{i.item.title}</p>
-              <p>{formatter.format(i.item.price)}</p>
-              <div className="quantity">
-                  <button onClick={()=> decreaseQuantity(i)}>-</button>
-                  <p>{i.quantity}</p>
-                  <button onClick={()=>increaseQuantity(i)}>+</button>
+              <div class="cart-item-info">
+                <p>{i.item.title}</p>
+                <p>{formatter.format(i.item.price)}</p>
+                <div className="quantity">
+                    <button onClick={()=> decreaseQuantity(i)}>-</button>
+                    <p>{i.quantity}</p>
+                    <button onClick={()=>increaseQuantity(i)}>+</button>
+                </div>
               </div>
           </div>
           )
       })}
       <div className='checkout'>
-        <p>{formatter.format(cost)}</p>
+        <button>Checkout</button>
+        <p>Total: {formatter.format(cost)}</p>
       </div>
   </div>
   </div>

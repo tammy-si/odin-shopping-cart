@@ -105,3 +105,44 @@ ul {
 .cart-icon:hover{
     background-color: white;
 }
+
+/* for the cart page */
+.cart-items {
+    display: grid;
+    grid-auto-rows: 150px;
+    text-align: center;
+    grid-gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border:1px solid black;
+    margin: 0 100px;
+    padding: 10px;
+}
+
+.cart-item img{
+    height: 100%;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+}
+
+.quantity > * {
+    margin: 10px;
+    padding: 5px;
+}
+
+
+.Home, .About {
+    position: fixed;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-50%, -50%);
+}
+
